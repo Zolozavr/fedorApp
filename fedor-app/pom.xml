@@ -45,6 +45,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>fedor-app</finalName>
+		<finalName>fedorapp</finalName>
 	</build>
 </project>
