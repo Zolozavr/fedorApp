@@ -9,7 +9,7 @@ public class PagesCotroller {
 @RequestMapping(value = {"/", "/home", "/index"})
 public ModelAndView index() {
 	ModelAndView mv = new ModelAndView("page");
-	mv.addObject("greatings", "testSpring");
+	mv.addObject("greatings", "Do we need to great Isanin");
 	return mv;
 }
 }
