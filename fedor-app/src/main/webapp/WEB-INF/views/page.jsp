@@ -9,8 +9,8 @@
 <title>Fedorov Online  Bookstore</title>
 </head>
 <body>
-<h1>
+
 ${contextRoot} says - ${greatings} 
-</h1>
+
 </body>
 </html>
