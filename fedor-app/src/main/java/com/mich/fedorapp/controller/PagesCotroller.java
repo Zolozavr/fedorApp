@@ -28,5 +28,4 @@ public class PagesCotroller {
 		return mv;
 	}
 
-	
 }

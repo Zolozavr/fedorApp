@@ -19,7 +19,9 @@
 <meta name="author" content="">
 
 <title>FEDOR ${title}</title>
-
+<script>
+window.menu='${title}';
+</script>
 <!-- Bootstrap Core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
@@ -64,6 +66,9 @@
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="${js}/bootstrap.min.js"></script>
+	
+	<!-- My code -->
+	<script src="${js}/myapp.js"></script>
 
 </body>
 
