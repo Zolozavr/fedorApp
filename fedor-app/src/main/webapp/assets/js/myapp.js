@@ -7,9 +7,13 @@ $(function() {
 	case'Contact Us':
 		$('#contact').addClass('active');
 		breack;
-	case'Home':	
-		$('#home').addClass('active');
+	case 'All Books':
+		$('#listBooks').addClass('active');
+	default:	
+		$('#listBooks').addClass('active');
+	$('#a_'+menu).addClass('active');
 		breack;
+		
 		
 	
 	}
