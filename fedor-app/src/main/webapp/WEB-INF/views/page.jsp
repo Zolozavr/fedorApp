@@ -20,7 +20,7 @@
 
 <title>FEDOR ${title}</title>
 <script>
-window.menu='${title}';
+	window.menu = '${title}';
 </script>
 <!-- Bootstrap Core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
@@ -36,40 +36,41 @@ window.menu='${title}';
 </head>
 
 <body>
+	<div class="wrapper">
+		<!-- Navigation -->
+		<%@include file="./shared/navbar.jsp"%>
 
-	<!-- Navigation -->
+		<!-- Page Content -->
+		<div class="content">
+			<c:if test="${userClickShop == true}">
+				<!-- Home section -->
+				<%@include file="home.jsp"%>
+			</c:if>
 
-	<%@include file="./shared/navbar.jsp"%>
-	<!-- Page Content -->
-	<c:if test="${userClickShop == true}">
-		<!-- Home section -->
-		<%@include file="home.jsp"%>
-	</c:if>
-	
-	<c:if test="${userClickAbout == true}">
-		<!-- About section -->
-		<%@include file="about.jsp"%>
-	</c:if>
-	
-	<c:if test="${userClickContact == true}">
-		<!-- Contact section -->
-		<%@include file="contact.jsp"%>
-	</c:if>
+			<c:if test="${userClickAbout == true}">
+				<!-- About section -->
+				<%@include file="about.jsp"%>
+			</c:if>
 
-	<!-- Footer -->
-	<%@include file="./shared/footer.jsp"%>
+			<c:if test="${userClickContact == true}">
+				<!-- Contact section -->
+				<%@include file="contact.jsp"%>
+			</c:if>
+		</div>
+		<!-- Footer -->
+		<%@include file="./shared/footer.jsp"%>
 
 
 
-	<!-- jQuery -->
-	<script src="${js}/jquery.js"></script>
+		<!-- jQuery -->
+		<script src="${js}/jquery.js"></script>
 
-	<!-- Bootstrap Core JavaScript -->
-	<script src="${js}/bootstrap.min.js"></script>
-	
-	<!-- My code -->
-	<script src="${js}/myapp.js"></script>
+		<!-- Bootstrap Core JavaScript -->
+		<script src="${js}/bootstrap.min.js"></script>
 
+		<!-- My code -->
+		<script src="${js}/myapp.js"></script>
+	</div>
 </body>
 
 </html>
