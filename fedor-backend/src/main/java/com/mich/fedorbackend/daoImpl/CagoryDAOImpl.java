@@ -11,10 +11,12 @@ import org.springframework.transaction.annotation.Transactional;
 import com.mich.fedorbackend.dao.CategoryDAO;
 import com.mich.fedorbackend.dto.Category;
 
-@Repository("category")
+@Repository("categoryDAO")
 public class CagoryDAOImpl implements CategoryDAO {
+	
 	@Autowired
 	private SessionFactory sessionFactory;
+	
 	private static List<Category> categories = new ArrayList<>();
 	static {
 		Category cat = new Category();
