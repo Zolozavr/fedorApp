@@ -17,8 +17,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ComponentScan(basePackages = "com.mich.fedorbackend.dto")
 @EnableTransactionManagement
 // MySQL DATABASE CONFIG
-public class HibarnateConfig {
-	private final static String DATABASE_URL = "jdbc:mysql://localhost:3306/root";
+public class HibernateConfig {
+	private final static String DATABASE_URL = "jdbc:mysql://localhost:3306/fedor";
 	private final static String DATABASE_DRIVER = "com.mysql.jdbc.Driver";
 	private final static String DATABASE_DIALECT = "org.hibernate.dialect.MySQLDialect";
 	private final static String DATABASE_USERNAME = "root";
@@ -51,7 +51,7 @@ public class HibarnateConfig {
 		properties.put("hibernate.dialect", DATABASE_DIALECT);
 		properties.put("hibernate.show_sql", "true");
 		properties.put("hibernate.format_sql", "true");
-		return null;
+		return properties;
 	}
 
 	// Transaction manager bean

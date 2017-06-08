@@ -5,6 +5,9 @@ import java.util.List;
 import com.mich.fedorbackend.dto.Category;
 
 public interface CategoryDAO {
-List<Category> list();
-Category get(int id);
+	boolean add(Category category);
+
+	List<Category> list();
+
+	Category get(int id);
 }
