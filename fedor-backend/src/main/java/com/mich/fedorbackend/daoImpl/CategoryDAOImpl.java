@@ -14,7 +14,7 @@ import com.mich.fedorbackend.dto.Category;
 
 @Repository("categoryDAO")
 @Transactional
-public class CagoryDAOImpl implements CategoryDAO {
+public class CategoryDAOImpl implements CategoryDAO {
 
 	@Autowired
 	private SessionFactory sessionFactory;

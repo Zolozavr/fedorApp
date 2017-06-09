@@ -9,7 +9,8 @@ $(function() {
 		breack;
 	case 'All Books':
 		$('#listBooks').addClass('active');
-	default:	
+	default:
+		if(menu == 'Home') break;
 		$('#listBooks').addClass('active');
 	$('#a_'+menu).addClass('active');
 		breack;
