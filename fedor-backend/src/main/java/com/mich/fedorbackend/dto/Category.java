@@ -11,9 +11,8 @@ public class Category {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private int id;
-	@Column(name="bookName")
+	@Column(name="categoryName")
 	private String name;
-	@Column(name="dscrpt")
 	private String description;
 	@Column(name="image_url")
 	private String imageUrl;

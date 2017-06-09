@@ -42,10 +42,12 @@ public class BooksTestCase {
 		
 		assertEquals("Not deleted", true, booksDAO.delete(book));
 		
-		assertEquals("Not listed, heh", 15,  booksDAO.list().size());
+		assertEquals("Not listed, heh", 16,  booksDAO.list().size());
 		
-		assertEquals("Wrong active list components", 14, booksDAO.listActiveBooks().size());
+		assertEquals("Wrong active list components", 15, booksDAO.listActiveBooks().size());
 		
-		assertEquals("Wrong active product by category", 2, booksDAO.listActiveProductsByCategory(5).size());
+		assertEquals("Wrong active books by category", 2, booksDAO.listActiveProductsByCategory(5).size());
+		
+		assertEquals("Wrong latest active book", 3, booksDAO.getLatestActiveBooks(3).size());
 	}
 }

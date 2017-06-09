@@ -40,16 +40,16 @@ is_active BOOLEAN,
 CONSTRAINT pk_category_id PRIMARY KEY (id)
 );
 
-insert into Category (categoryName, description, image_url)
-values ('Detective', 'Detective novels', 'p_01.png');
-insert into Category (categoryName, description, image_url)
-values ('Science Fiction', 'Novels about stars and space', 'p_02.png');
-insert into Category (categoryName, description, image_url)
-values ('Drama', 'Drammatical novels with no happy end', 'p_03.png');
-insert into Category (categoryName, description, image_url)
-values ('Vacabulary', 'Vocabularys from one language to another', 'p_03.png');
-insert into Category (categoryName, description, image_url)
-values ('Poetic', 'Poetic books', 'p_04.png');
+insert into Category (categoryName, description, image_url, is_active)
+values ('Detective', 'Detective novels', 'p_01.png', true);
+insert into Category (categoryName, description, image_url, is_active)
+values ('Science Fiction', 'Novels about stars and space', 'p_02.png', true);
+insert into Category (categoryName, description, image_url, is_active)
+values ('Drama', 'Drammatical novels with no happy end', 'p_03.png', true);
+insert into Category (categoryName, description, image_url, is_active)
+values ('Vacabulary', 'Vocabularys from one language to another', 'p_03.png', true);
+insert into Category (categoryName, description, image_url, is_active)
+values ('Poetic', 'Poetic books', 'p_04.png', true);
 
 create table Books ( 
 id int not null auto_increment,
