@@ -15,14 +15,28 @@
 							<li class="active">All Books</li>
 						</ol>
 					</c:if>
-					
-						<c:if test="${userClickCategoryBooks == true}">
+
+					<c:if test="${userClickCategoryBooks == true}">
 						<ol class="breadcrumb">
 							<li><a href="${contextRoot}/home">Home</a></li>
 							<li class="active">Category</li>
 							<li class="active">${category.name}</li>
 						</ol>
 					</c:if>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-xs-12">
+					<table id="booksListTable"
+						class="table table-striped table-borderd">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Name</th>
+							</tr>
+						</thead>
+					</table>
 				</div>
 			</div>
 		</div>

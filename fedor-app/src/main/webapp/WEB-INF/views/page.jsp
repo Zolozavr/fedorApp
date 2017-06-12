@@ -27,7 +27,8 @@
 <link href="${css}/bootstrap-readable.css" rel="stylesheet">
 <!-- Custom CSS -->
 <link href="${css}/fedorapp.css" rel="stylesheet">
-
+<!-- MIT CSS -->
+<link href="${css}/dataTables.bootstrap.css">
 <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -72,7 +73,13 @@
 
 		<!-- Bootstrap Core JavaScript -->
 		<script src="${js}/bootstrap.min.js"></script>
-
+		
+		<!-- MIT DATATABLE -->
+		<script src="${js}/jquery.dataTables.js"></script>
+		
+		<!-- MIT DATATABLE BOOTSTRAP -->
+		<script src="${js}/dataTables.bootstrap.js}"></script>
+		
 		<!-- My code -->
 		<script src="${js}/myapp.js"></script>
 	</div>

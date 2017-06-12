@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="fedorApp">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/fedor-app/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/fedor-backend/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/fedor-backend/src/test/java"/>
+        <property name="context-root" value="fedorApp"/>
+        <property name="java-output-path" value="/fedorApp/fedor-app/target/classes"/>
+    </wb-module>
+</project-modules>
