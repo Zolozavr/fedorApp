@@ -1,0 +1,8 @@
+/**
+ * 
+ */
+/**
+ * @author magi
+ *
+ */
+package exceptions;

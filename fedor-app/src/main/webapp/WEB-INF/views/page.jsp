@@ -21,14 +21,16 @@
 <title>FEDOR ${title}</title>
 <script>
 	window.menu = '${title}';
+	window.contextRoot = '${contextRoot}';
 </script>
 <!-- Bootstrap Core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
+
 <link href="${css}/bootstrap-readable.css" rel="stylesheet">
 <!-- Custom CSS -->
 <link href="${css}/fedorapp.css" rel="stylesheet">
 <!-- MIT CSS -->
-<link href="${css}/dataTables.bootstrap.css">
+<link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
 <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -57,10 +59,17 @@
 				<!-- Contact section -->
 				<%@include file="contact.jsp"%>
 			</c:if>
-			
-			<c:if test="${userClickAllBooks == true or userClickCategoryBooks == true}">
+			<!-- All books view or view books by category-->
+			<c:if
+				test="${userClickAllBooks == true or userClickCategoryBooks == true}">
 				<!-- Contact section -->
 				<%@include file="listBooks.jsp"%>
+			</c:if>
+			<!-- Single book view -->
+			<c:if test="${userClickShowBook == true}">
+
+
+				<%@include file="book.jsp"%>
 			</c:if>
 		</div>
 		<!-- Footer -->
@@ -73,13 +82,13 @@
 
 		<!-- Bootstrap Core JavaScript -->
 		<script src="${js}/bootstrap.min.js"></script>
-		
+
 		<!-- MIT DATATABLE -->
 		<script src="${js}/jquery.dataTables.js"></script>
-		
+
 		<!-- MIT DATATABLE BOOTSTRAP -->
 		<script src="${js}/dataTables.bootstrap.js}"></script>
-		
+
 		<!-- My code -->
 		<script src="${js}/myapp.js"></script>
 	</div>

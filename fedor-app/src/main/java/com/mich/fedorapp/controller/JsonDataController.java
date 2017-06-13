@@ -23,7 +23,7 @@ public class JsonDataController {
 		return bookDAO.listActiveBooks();
 	}
 	
-	@RequestMapping("/all/{id}/books")
+	@RequestMapping("/category/{id}/books")
 	@ResponseBody
 	public List<Books> getAllBooksByCategory(@PathVariable int id) {
 		return bookDAO.listActiveProductsByCategory(id);

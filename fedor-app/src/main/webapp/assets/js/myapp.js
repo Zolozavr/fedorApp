@@ -17,19 +17,57 @@ $(function() {
 		$('#a_' + menu).addClass('active');
 
 	}
-	// test
-	var books = [ [ '1', 'abc' ], [ '2', 'abc' ], [ '3', 'abdsadc' ],
-			[ '4', 'abdfsfc' ], [ '5', 'absadsac' ], [ '6', 'abfdsfc' ],
-			[ '7', 'abgfdc' ], [ '8', 'abdsac' ], [ '9', 'abfdsfdsc' ]
-
-	];
+	
 
 	var $table = $('#booksListTable');
+	
+	
 	if ($table.length) {
 
-		$table.DataTable({
-			data : books
-		});
-
+	var jsonURL ='';
+	
+	if(window.categoryId ==''){
+		jsonURL = window.contextRoot + '/json/data/all/books';
 	}
+	
+	else
+		{
+		jsonURL = window.contextRoot + '/json/data/category/'+ window.categoryId +'/books'; 
+		}
+
+	
+	$table.DataTable({
+			lengthMenu: [[3,5,10,-1], ['3 books', '5 books', '10 books', 'All']],
+			pageLength: 5,
+			ajax: {
+			url: jsonURL,
+			dataSrc: ''
+			},
+			columns: [
+			{data: 'imgUrl',
+				mRender: function(data, type, row){
+					return '<img src="'+window.contextRoot+'/resources/images/'+data+'.jpg" class="bookTableImg"/>';
+				}
+			},
+			{data: 'bookName' },
+			{data: 'author' }, 
+			{data: 'yearOfPrint'},
+			{data: 'unitPrice', mRender: function(data, type, row){
+			return '&#8372; ' + data
+		    }},
+		    {data: 'id',
+			bSortable: false,
+		    	mRender: function(data, type, row){
+				var str = '';
+				str += '<a href="'+window.contextRoot+'/show/'+data+'/book" class="btn bttn-primary"><span class="glyphicon glyphicon-eye-open"></span></a>';
+				return str;
+			}}
+		    ]	
+		});
+	
+	}	
+
+	
+	
+	
 });

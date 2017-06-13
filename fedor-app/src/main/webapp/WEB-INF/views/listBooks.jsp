@@ -10,6 +10,9 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<c:if test="${userClickAllBooks == true}">
+						<script>
+							window.categoryId = '';
+						</script>
 						<ol class="breadcrumb">
 							<li><a href="${contextRoot}/home">Home</a></li>
 							<li class="active">All Books</li>
@@ -17,6 +20,10 @@
 					</c:if>
 
 					<c:if test="${userClickCategoryBooks == true}">
+
+						<script>
+							window.categoryId = '${category.id}';
+						</script>
 						<ol class="breadcrumb">
 							<li><a href="${contextRoot}/home">Home</a></li>
 							<li class="active">Category</li>
@@ -25,17 +32,31 @@
 					</c:if>
 				</div>
 			</div>
-			
+
 			<div class="row">
 				<div class="col-xs-12">
 					<table id="booksListTable"
 						class="table table-striped table-borderd">
 						<thead>
 							<tr>
-								<th>ID</th>
-								<th>Name</th>
+								<th></th>
+								<th>Book Title</th>
+								<th>Author</th>
+								<th>Year of Edition</th>
+								<th>Price</th>
+								<th></th>
 							</tr>
 						</thead>
+						<tfoot>
+							<tr>
+								<th></th>
+								<th>Books</th>
+								<th>Author</th>
+								<th>Year of print</th>
+								<th>Price</th>
+								<th></th>
+							</tr>
+						</tfoot>
 					</table>
 				</div>
 			</div>
