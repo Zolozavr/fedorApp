@@ -70,7 +70,13 @@ $(function() {
 	
 	}	
 
-	
+	//Allert fade time
+	var $alert =$('.alert');
+	if($alert.length){
+		setTimeout(function(){
+		$alert.fadeOut('slow');	
+		}, 1500)
+	}
 	
 	
 });

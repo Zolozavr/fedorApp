@@ -7,6 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
+
+import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Books {
@@ -14,10 +20,13 @@ public class Books {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	@NotBlank(message= "Book Title is empty")
 	private String bookName;
+	
 	private String author;
 	private String yearOfPrint;
 	@Column(name = "unit_price")
+	@Min(value=1, message="Price must be greater then 1")
 	private double unitPrice;
 
 	@Column(name = "img_url")
@@ -28,7 +37,12 @@ public class Books {
 	private int usersId;
 	private int views;
 	@Column(name = "is_active")
+	@JsonIgnore
 	private boolean active;
+	
+	
+	//Field for file multipart
+	private MultipartFile imgfile;
 	
 
 	public Books() {
@@ -114,5 +128,15 @@ public class Books {
 	public void setYearOfPrint(String yearOfPrint) {
 		this.yearOfPrint = yearOfPrint;
 	}
+	//For logger
+	@Override
+	public String toString() {
+		return "Books [id=" + id + ", bookName=" + bookName + ", author=" + author + ", yearOfPrint=" + yearOfPrint
+				+ ", unitPrice=" + unitPrice + ", imgUrl=" + imgUrl + ", categoryId=" + categoryId + ", usersId="
+				+ usersId + ", views=" + views + ", active=" + active + "]";
+	}
+	
+	
+	
 
 }

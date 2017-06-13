@@ -3,8 +3,14 @@
 <div class="container">
 
 	<div class="row">
-
-
+	<c:if test="${not empty msg}">
+	<div class="col-xs-8">
+	<div class="alert alert-success alert-dismissible">
+	<button type="button" class="close" data-dismiss="alert">&times;</button>
+	${msg}
+	</div>
+	</div>
+	</c:if>
 		<div class="com-md-offset-2 col-md-8">
 
 			<div class="panel panel-primary">
@@ -14,14 +20,14 @@
 
 				<div class="panel-body">
 					<!-- Forms -->
-					<sf:form class="form-horizontal" modelAttribute="book">
+					<sf:form class="form-horizontal" modelAttribute="book" action="${contextRoot}/manage/books" method="POST">
 						<div class="form-group">
-							<label class="controll-label col-md-4" for="bookName">Enter
+							<label class="control-label col-md-4" for="bookName">Enter
 								Book Title:</label>
 							<div class="col-md-8">
 								<sf:input type="text" path="bookName" id="bookName"
 									placeholder="Book Title" class="form-control" />
-								<em class="help-block">Please enter book title!</em>
+								<sf:errors path="bookName" cssClass="help-block" element="em"/>
 							</div>
 						</div>
 
@@ -29,13 +35,12 @@
 
 
 						<div class="form-group">
-							<label class="controll-label col-md-4" for="author">Enter
+							<label class="control-label col-md-4" for="author">Enter
 								Author Name:</label>
 							<div class="col-md-8">
 								<sf:input type="text" path="author" id="author"
 									placeholder="Author's Name" class="form-control" />
-								<em class="help-block">Please enter author's first name and
-									second name.</em>
+								
 							</div>
 						</div>
 
@@ -45,13 +50,12 @@
 
 
 						<div class="form-group">
-							<label class="controll-label col-md-4" for="yearOfPrint">Enter
+							<label class="control-label col-md-4" for="yearOfPrint">Enter
 								Year of edition:</label>
 							<div class="col-md-8">
 								<sf:input type="text" path="yearOfPrint" id="yearOfPrint"
 									placeholder="Year Of Edition" class="form-control" />
-								<em class="help-block">Please enter edition year of the
-									book.</em>
+								<sf:errors path="yearOfPrint" cssClass="help-block" element="em"/>
 							</div>
 						</div>
 
@@ -60,17 +64,17 @@
 
 
 						<div class="form-group">
-							<label class="controll-label col-md-4" for="unitPrice">Enter
+							<label class="control-label col-md-4" for="unitPrice">Enter
 								price of the book</label>
 							<div class="col-md-8">
 								<sf:input type="text" path="unitPrice" id="unitPrice"
-									placeholder="Book price" class="form-control" /> <em
-									class="help-block">Book price in &#8372;</em>
+									placeholder="Book price in &#8372;" class="form-control"/> 
+									<sf:errors path="unitPrice" cssClass="help-block" element="em"/>
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="controll-label col-md-4" for="categoryId">Select category:</label>
+							<label class="control-label col-md-4" for="categoryId">Select category:</label>
 							<div class="col-md-8">
 								<sf:select class="form-control" id="categoryId" path="categoryId" 
 								items="${categories}" itemLabel="name"
