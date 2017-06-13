@@ -20,6 +20,8 @@
 				<li id="contact"><a href="${contextRoot}/contact">CONTACTS</a></li>
 				
 				<li id="listBooks"><a href="${contextRoot}/show/all/books">BOOKS</a></li>
+				
+				<li id="manageBooks"><a href="${contextRoot}/manage/books">MANAGE YOUR BOOKS</a></li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->

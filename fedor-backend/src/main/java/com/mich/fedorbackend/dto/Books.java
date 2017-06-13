@@ -1,5 +1,7 @@
 package com.mich.fedorbackend.dto;
 
+import java.util.UUID;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,6 +29,11 @@ public class Books {
 	private int views;
 	@Column(name = "is_active")
 	private boolean active;
+	
+
+	public Books() {
+		this.imgUrl = "BK" + UUID.randomUUID().toString().substring(26).toUpperCase();
+	}
 
 	public int getId() {
 		return id;

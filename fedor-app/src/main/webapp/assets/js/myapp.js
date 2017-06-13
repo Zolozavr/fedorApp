@@ -3,13 +3,16 @@ $(function() {
 	switch (menu) {
 	case 'About Us':
 		$('#about').addClass('active');
-		breack;
+		break;
 	case 'Contact Us':
 		$('#contact').addClass('active');
-		breack;
+		break;
 	case 'All Books':
 		$('#listBooks').addClass('active');
-		breack;
+		break;
+	case 'Manage Books':
+		$('#manageBooks').addClass('active');
+		break;
 	default:
 		if (menu == 'Home')
 			break;

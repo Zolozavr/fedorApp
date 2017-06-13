@@ -65,12 +65,19 @@
 				<!-- Contact section -->
 				<%@include file="listBooks.jsp"%>
 			</c:if>
-			<!-- Single book view -->
+				<!-- Manage book view -->
 			<c:if test="${userClickShowBook == true}">
 
 
 				<%@include file="book.jsp"%>
 			</c:if>
+			<!-- Manager Book View -->
+			<c:if
+				test="${userClickManageBooks == true}">
+				<!-- Contact section -->
+				<%@include file="manageBooks.jsp"%>
+			</c:if>
+		
 		</div>
 		<!-- Footer -->
 		<%@include file="./shared/footer.jsp"%>
