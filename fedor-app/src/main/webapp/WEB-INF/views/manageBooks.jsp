@@ -20,7 +20,7 @@
 
 				<div class="panel-body">
 					<!-- Forms -->
-					<sf:form class="form-horizontal" modelAttribute="book" action="${contextRoot}/manage/books" method="POST">
+					<sf:form class="form-horizontal" modelAttribute="book" action="${contextRoot}/manage/books" method="POST" enctype="multipart/form-data">
 						<div class="form-group">
 							<label class="control-label col-md-4" for="bookName">Enter
 								Book Title:</label>
@@ -58,7 +58,15 @@
 								<sf:errors path="yearOfPrint" cssClass="help-block" element="em"/>
 							</div>
 						</div>
-
+						
+						<!-- File IMG uploader -->
+						<div class="form-group">
+							<label class="control-label col-md-4" for="file">Upload IMG:</label>
+							<div class="col-md-8">
+								<sf:input type="file" path="file" id="file"
+									 class="form-control" />
+							</div>
+						</div>
 
 
 
@@ -102,4 +110,55 @@
 		</div>
 	</div>
 
+
+<div class="col-xs-12">
+<h2>BOOKS IN CATALOG</h2>
+<hr/>
+</div>
+
+<div class="col-xs-12">
+<div style="owerflow:auto">
+
+<!-- ADMIN TABLE -->
+<table id="adminBookTable" class="table table-striped table-borderd">
+<thead>
+					<tr>
+						<th>Id</th>
+						<th>&#160;</th>
+						<th>Title</th>
+						<th>Price</th>
+						<th>Active</th>
+						<th>Edit</th>
+					</tr>
+				</thead>
+			<!-- Table Body -->	
+				<tbody>
+				<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				</tr>
+				</tbody>
+				
+<tfoot>
+
+<tr>
+<th>Id</th>
+<th>&#160;</th>
+<th>Title</th>
+<th>Price</th>
+<th>Active</th>
+<th>Edit</th>
+</tr>
+</tfoot>
+
+</table>
+
+
+</div>
+
+</div>
 </div>

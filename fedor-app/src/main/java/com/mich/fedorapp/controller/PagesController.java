@@ -22,11 +22,17 @@ public class PagesController {
 
 	@Autowired
 	private BooksDAO booksDAO;
+	
+	
 
 	@RequestMapping(value = { "/", "/home", "/index" })
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "");
+		
+		logger.info("Inside page controller index - INFO");
+		logger.debug("Inside page controller indes - DEBUG");
+		
 		// test dao
 		mv.addObject("categories", categoryDAO.list());
 		mv.addObject("userClickShop", true);

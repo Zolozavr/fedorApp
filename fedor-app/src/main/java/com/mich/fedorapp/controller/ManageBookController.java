@@ -2,6 +2,7 @@ package com.mich.fedorapp.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.slf4j.Logger;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.mich.fedorapp.util.FileUploadUtility;
 import com.mich.fedorbackend.dao.BooksDAO;
 import com.mich.fedorbackend.dao.CategoryDAO;
 import com.mich.fedorbackend.dto.Books;
@@ -62,7 +64,7 @@ public class ManageBookController {
 	};
 	//Binding result  before the model
 	@RequestMapping(value="/books", method=RequestMethod.POST)
-	public String handleBooksSubmission(@Valid @ModelAttribute("book") Books mBook, BindingResult results, Model model){
+	public String handleBooksSubmission(@Valid @ModelAttribute("book") Books mBook, BindingResult results, Model model, HttpServletRequest request){
 		//error check
 		if(results.hasErrors()){
 			model.addAttribute("userClickManageBooks", true);
@@ -72,6 +74,12 @@ public class ManageBookController {
 		
 		logger.info(mBook.toString());
 		bookDAO.add(mBook);
+		
+		if(!mBook.getFile().getOriginalFilename().equals("")){
+			FileUploadUtility.uploadFile(request, mBook.getFile(), mBook.getImgUrl());
+		}
+			
+		
 		return "redirect:/manage/books?opr=book";
 	}
 }

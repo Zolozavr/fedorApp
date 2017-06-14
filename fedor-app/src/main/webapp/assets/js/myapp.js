@@ -75,7 +75,7 @@ $(function() {
 	if($alert.length){
 		setTimeout(function(){
 		$alert.fadeOut('slow');	
-		}, 1500)
+		}, 150000)
 	}
 	
 	
