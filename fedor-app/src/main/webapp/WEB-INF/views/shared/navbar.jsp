@@ -16,12 +16,18 @@
 			id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li id="about"><a href="${contextRoot}/about">ABOUT US</a></li>
-				
+
 				<li id="contact"><a href="${contextRoot}/contact">CONTACTS</a></li>
-				
+
 				<li id="listBooks"><a href="${contextRoot}/show/all/books">BOOKS</a></li>
-				
-				<li id="manageBooks"><a href="${contextRoot}/manage/books">MANAGE YOUR BOOKS</a></li>
+
+				<li id="manageBooks"><a href="${contextRoot}/manage/books">MANAGE
+						YOUR BOOKS</a></li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li id="register"><a href="${contextRoot}/register">SIGN UP</a></li>
+				<li id="login"><a href="${contextRoot}/login">LOGIN</a></li>
 			</ul>
 		</div>
 		<!-- /.navbar-collapse -->

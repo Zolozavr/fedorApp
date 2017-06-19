@@ -23,6 +23,13 @@ public class JsonDataController {
 		return bookDAO.listActiveBooks();
 	}
 	
+	@RequestMapping("/admin/all/books")
+	@ResponseBody
+	public List<Books> getAllBooksForAdmnin() {
+		
+		return bookDAO.list();
+	}
+	
 	@RequestMapping("/category/{id}/books")
 	@ResponseBody
 	public List<Books> getAllBooksByCategory(@PathVariable int id) {

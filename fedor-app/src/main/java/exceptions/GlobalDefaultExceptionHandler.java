@@ -6,7 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
 @ControllerAdvice
-public class DefaultExceptionHandler {
+public class GlobalDefaultExceptionHandler {
 
 	
 	@ExceptionHandler(NoHandlerFoundException.class)

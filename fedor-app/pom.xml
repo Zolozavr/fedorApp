@@ -44,10 +44,10 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>${spring.version}</version>
 			<exclusions>
-			<exclusion>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-			</exclusion>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
 			</exclusions>
 		</dependency>
 		<!-- JSTL -->
@@ -56,13 +56,13 @@
 			<artifactId>jstl</artifactId>
 			<version>${jstl.version}</version>
 		</dependency>
-		
+
 		<!-- Logging -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
 			<version>1.2.3</version>
-			
+
 		</dependency>
 
 		<dependency>
@@ -70,7 +70,21 @@
 			<artifactId>jcl-over-slf4j</artifactId>
 			<version>1.7.25</version>
 		</dependency>
-		
+
+		<!-- QR code -->
+
+		<dependency>
+			<groupId>com.google.zxing</groupId>
+			<artifactId>core</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+
+		<!-- Web flow -->
+		<dependency>
+			<groupId>org.springframework.webflow</groupId>
+			<artifactId>spring-webflow</artifactId>
+			<version>2.4.4.RELEASE</version>
+		</dependency>
 
 	</dependencies>
 	<build>

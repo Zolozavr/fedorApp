@@ -38,7 +38,7 @@ public class Books {
 	private int usersId;
 	private int views;
 	@Column(name = "is_active")
-	@JsonIgnore
+	
 	private boolean active;
 	
 	
