@@ -32,7 +32,9 @@
 	<div class="col-xs-12 col-sm-4">
 		<h2>${book.bookName}</h2>
 		<hr/>
-		<h4>Price: <b>&#8372;${book.unitPrice}</b></h4>
+		<h4><b>Price:</b> &#8372;${book.unitPrice}</h4>
+		<hr/>
+		<h5>Book description: ${book.description}</h5>
 	</div>
 
 </div>

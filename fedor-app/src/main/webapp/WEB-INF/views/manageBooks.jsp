@@ -60,6 +60,16 @@
 								<sf:errors path="yearOfPrint" cssClass="help-block" element="em" />
 							</div>
 						</div>
+						
+							<!-- DESCRIPTION -->
+						<div class="form-group">
+							<label class="control-label col-md-4" for="yearOfPrint">Enter
+								Book Description:</label>
+							<div class="col-md-8">
+								<sf:textarea type="text" cols="" rows="5" path="description"
+									id="categoryDescription" class="form-control" />
+							</div>
+						</div>
 
 						<!-- File IMG uploader -->
 						<div class="form-group">

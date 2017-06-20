@@ -13,7 +13,6 @@ import javax.validation.constraints.Min;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Books {
@@ -21,13 +20,13 @@ public class Books {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@NotBlank(message= "Book Title is empty")
+
+	@NotBlank(message = "Book Title is empty")
 	private String bookName;
-	
 	private String author;
 	private String yearOfPrint;
 	@Column(name = "unit_price")
-	@Min(value=1, message="Price must be greater then 1")
+	@Min(value = 1, message = "Price must be greater then 1")
 	private double unitPrice;
 
 	@Column(name = "img_url")
@@ -36,16 +35,32 @@ public class Books {
 	private int categoryId;
 	@Column(name = "users_id")
 	private int usersId;
+	
 	private int views;
 	@Column(name = "is_active")
-	
 	private boolean active;
 	
-	
-	//Field for file multipart
+	private String description;
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	@Override
+	public String toString() {
+		return "Books [id=" + id + ", bookName=" + bookName + ", author=" + author + ", yearOfPrint=" + yearOfPrint
+				+ ", unitPrice=" + unitPrice + ", imgUrl=" + imgUrl + ", categoryId=" + categoryId + ", usersId="
+				+ usersId + ", views=" + views + ", active=" + active + ", description=" + description + ", file="
+				+ file + "]";
+	}
+
+	// Field for file multipart
 	@Transient
 	private MultipartFile file;
-	
 
 	public MultipartFile getFile() {
 		return file;
@@ -138,15 +153,6 @@ public class Books {
 	public void setYearOfPrint(String yearOfPrint) {
 		this.yearOfPrint = yearOfPrint;
 	}
-	//For logger
-	@Override
-	public String toString() {
-		return "Books [id=" + id + ", bookName=" + bookName + ", author=" + author + ", yearOfPrint=" + yearOfPrint
-				+ ", unitPrice=" + unitPrice + ", imgUrl=" + imgUrl + ", categoryId=" + categoryId + ", usersId="
-				+ usersId + ", views=" + views + ", active=" + active + "]";
-	}
-	
-	
-	
+
 
 }
